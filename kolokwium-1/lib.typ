@@ -12,6 +12,10 @@
 #let figur     = rgb("#3a6ea5")
 #let fillblue  = rgb("#3a6ea5")
 
+// ---------- nagłówek części (pojawia się w spisie treści) ----------
+#let czesc(tytul) = heading(level: 1, numbering: none, outlined: true,
+  bookmarked: true)[#tytul]
+
 // ---------- ramki ----------
 #let rozwiazanie(body) = block(
   width: 100%,
@@ -33,6 +37,17 @@
   above: 0.8em, below: 0.9em,
 )[
   #text(size: 9.3pt)[#strong[Uwaga.] #body]
+]
+
+#let odpowiedz_zwarta(body) = block(
+  width: 100%,
+  breakable: false,
+  fill: rgb("#f1f6f1"),
+  stroke: (left: 2.2pt + rgb("#3f7d3f")),
+  inset: (left: 10pt, right: 10pt, top: 4pt, bottom: 4pt),
+  above: 0.6em, below: 0.6em,
+)[
+  #text(size: 8.9pt)[#strong[Odpowiedź.] #body]
 ]
 
 #let odpowiedz(body) = block(

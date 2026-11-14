@@ -244,10 +244,10 @@ odczytać geometrycznie.
     column-gutter: 0.6cm,
     [
       #align(center)[
-        #box(width: 7.6cm, height: 6.9cm, {
+        #box(width: 7.6cm, height: 5.55cm, {
           import "lib.typ": cplot, kropka, kolko, etykieta
           cplot(
-            w: 7.6cm, h: 6.9cm, unit: 1.5cm, ox: 3.8cm, oy: 5.9cm,
+            w: 7.6cm, h: 5.55cm, unit: 1.22cm, ox: 3.8cm, oy: 4.72cm,
             xlab: $x$, ylab: $y$,
             body: (X, Y, P) => {
               let ytop = 4.15
@@ -280,10 +280,10 @@ odczytać geometrycznie.
     ],
     [
       #align(center)[
-        #box(width: 7.6cm, height: 6.9cm, {
+        #box(width: 7.6cm, height: 5.55cm, {
           import "lib.typ": cplot, kropka, etykieta
           cplot(
-            w: 7.6cm, h: 6.9cm, unit: 1.5cm, ox: 3.8cm, oy: 5.9cm,
+            w: 7.6cm, h: 5.55cm, unit: 1.22cm, ox: 3.8cm, oy: 4.72cm,
             xlab: $x$, ylab: $y$,
             body: (X, Y, P) => {
               // podklad: trojkat nabl_1
@@ -309,16 +309,15 @@ odczytać geometrycznie.
   )
 ]
 
-#odpowiedz[
+#odpowiedz_zwarta[
   #text(weight: "bold")[Suma:]
-  $ union.big_(t in RR_+) nabla_t = ([-1,1] times (0, infinity)) union {(0,0)} $
-  Domknięty pas (z pionowymi bokami), nieograniczony ku górze, wraz z izolowanym
-  punktem $A = (0,0)$; dolna krawędź poza punktem $A$ nie należy do zbioru.
-
-  #v(0.2em)
+  #box[$union.big_(t in RR_+) nabla_t = ([-1,1] times (0, infinity)) union {(0,0)}$]
+  — domknięty pas nieograniczony ku górze (z pionowymi bokami) wraz z izolowanym
+  punktem $A = (0,0)$; dolna krawędź poza $A$ nie należy do zbioru.
+  #h(0.4em)
   #text(weight: "bold")[Przekrój:]
-  $ inter.big_(t in NN) nabla_t = {0} times [0,1] $
-  Domknięty pionowy odcinek o końcach $(0,0)$ i $(0,1)$.
+  #box[$inter.big_(t in NN) nabla_t = {0} times [0,1]$]
+  — domknięty pionowy odcinek o końcach $(0,0)$ i $(0,1)$.
 ]
 
 #uwaga[

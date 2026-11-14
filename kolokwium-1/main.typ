@@ -31,7 +31,7 @@
 #set heading(numbering: none)
 #show heading.where(level: 1): it => block(above: 1.7em, below: 1.0em, {
   set text(size: 14.5pt, weight: "bold")
-  it
+  align(left, it.body)
   v(-0.75em)
   line(length: 100%, stroke: 0.75pt + accent)
 })
@@ -151,24 +151,20 @@
 // ============================================================
 //  ROZWIĄZANIA
 // ============================================================
-#pagebreak()
-#align(center)[#text(size: 15.5pt, weight: "bold")[Rozwiązania zadań 1--4]]
-#v(0.3em)
+#czesc[Rozwiązania zadań 1--4]
 #include "zadania_1_4.typ"
 
 #pagebreak()
-#align(center)[#text(size: 15.5pt, weight: "bold")[Zadanie 5 wraz z notatką teoretyczną]]
-#v(0.3em)
+#czesc[Zadanie 5 wraz z notatką teoretyczną]
 #include "zadanie_5.typ"
 
 #pagebreak()
-#align(center)[#text(size: 15.5pt, weight: "bold")[Zadanie 6 wraz z notatką teoretyczną]]
-#v(0.3em)
+#czesc[Zadanie 6 wraz z notatką teoretyczną]
 #include "zadanie_6.typ"
 
-#v(1.4em)
-#align(center)[#text(size: 14pt, weight: "bold")[Zestawienie odpowiedzi]]
-#v(0.5em)
+#v(1.2em)
+#czesc[Zestawienie odpowiedzi]
+#v(0.2em)
 
 #table(
   columns: (2.2em, 1fr),

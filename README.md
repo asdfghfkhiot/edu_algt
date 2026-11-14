@@ -5,7 +5,7 @@ semestr zimowy 2025/2026, grupa T2) wraz z notatkami teoretycznymi do zadań 5 i
 złożone w jeden dokument PDF.
 
 **Wynik:** [`output/ALGT_2025Z_K1_T2_rozwiazania.pdf`](output/ALGT_2025Z_K1_T2_rozwiazania.pdf)
-(15 stron A4, rysunki wektorowe, spis treści, zestawienie odpowiedzi).
+(13 stron A4, rysunki wektorowe, spis treści, zestawienie odpowiedzi).
 
 ## Zawartość dokumentu
 
@@ -14,10 +14,10 @@ złożone w jeden dokument PDF.
 | strona tytułowa | opis zakresu dokumentu |
 | s. 2 | pełna treść arkusza (zadania 1–6, punktacja) |
 | s. 3 | spis treści |
-| s. 4–8 | **zadania 1–4** — rozwiązania krok po kroku, rysunki na płaszczyźnie zespolonej, odpowiedzi, uwagi o typowych błędach |
-| s. 9–12 | **zadanie 5** + notatka teoretyczna i rozwiązanie z rysunkami sumy i przekroju |
-| s. 13–15 | **zadanie 6** + notatka teoretyczna, rozwiązanie, zaprzeczenie zdania |
-| s. 15 | zestawienie odpowiedzi do wszystkich zadań |
+| s. 3–7 | **zadania 1–4** — rozwiązania krok po kroku, rysunki na płaszczyźnie zespolonej, odpowiedzi, uwagi o typowych błędach |
+| s. 8–10 | **zadanie 5** + notatka teoretyczna i rozwiązanie z rysunkami sumy i przekroju |
+| s. 11–13 | **zadanie 6** + notatka teoretyczna, rozwiązanie, zaprzeczenie zdania |
+| s. 13 | zestawienie odpowiedzi do wszystkich zadań |
 
 ### Notatki teoretyczne
 
