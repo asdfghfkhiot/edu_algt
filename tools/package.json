@@ -1,0 +1,11 @@
+{
+  "name": "algt-build",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zależności do kompilacji dokumentu Typst (kolokwium 1) do PDF bez instalacji toolchainu Typst.",
+  "dependencies": {
+    "@myriaddreamin/typst.ts": "0.7.0",
+    "@myriaddreamin/typst-ts-node-compiler": "0.7.0"
+  }
+}
