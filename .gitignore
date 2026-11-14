@@ -1,0 +1,5 @@
+# zależności i artefakty budowania
+node_modules/
+build/
+dist/
+*.tmp
