@@ -4,7 +4,7 @@
 //  USTAWIENIA DOKUMENTU
 // ============================================================
 #set document(
-  title: "ALGT 2025Z — kolokwium 1 (grupa T2): rozwiązania i notatki",
+  title: "ALGT 2025Z — kolokwium 1 (grupa T2): zadania 3–5 z teorią",
   author: "opracowanie",
 )
 
@@ -18,7 +18,7 @@
       columns: (1fr, auto),
       align: (left, right),
       [ALGT 2025Z · kolokwium 1 · grupa T2],
-      [rozwiązania zadań 1--6 · notatki do zadań 5 i 6],
+      [zadania 3–6 z notatkami teoretycznymi],
     )
     v(-0.55em)
     line(length: 100%, stroke: 0.35pt + rgb("#c8d6e2"))
@@ -39,8 +39,8 @@
   set text(size: 11.8pt, weight: "bold")
   it
 })
-#show heading.where(level: 3): it => block(above: 1.1em, below: 0.4em, {
-  set text(size: 10.5pt, weight: "bold", style: "italic")
+#show heading.where(level: 3): it => block(above: 1.15em, below: 0.4em, {
+  set text(size: 10.4pt, weight: "bold", style: "italic", fill: rgb("#33506b"))
   it
 })
 
@@ -69,22 +69,37 @@
   #v(1.5cm)
   #line(length: 40%, stroke: 0.6pt + rgb("#98a8b8"))
   #v(1.5cm)
-  #text(size: 15pt, weight: "bold")[Pełne rozwiązania zadań 1–6]
+  #text(size: 15pt, weight: "bold")[Zadania 3, 4, 5 i 6]
   #v(0.35em)
-  #text(size: 11.5pt)[wraz z notatkami teoretycznymi do zadań 5 i 6]
+  #text(size: 11.5pt)[rozwiązania krok po kroku wraz z rozwiniętą teorią]
   #v(3.2cm)
 ]
 
 #block(width: 100%, fill: boxbg, stroke: (left: 3pt + accent), inset: 14pt, radius: (right: 3pt))[
   #set par(justify: true)
   #text(size: 9.3pt)[
-    *Zawartość dokumentu.* Zbiór zawiera kompletny arkusz kolokwium (zadania 1--6,
-    razem 16 punktów) oraz szczegółowe rozwiązania każdego z nich. Rozwiązania
-    zadań 5 i 6 poprzedzono notatkami teoretycznymi: dla zadania 5 -- o rodzinach
-    zbiorów, sumie i przekroju uogólnionym oraz o własnościach geometrycznych
-    rodzin indeksowanych; dla zadania 6 -- o kwantyfikatorach, funktorach zdaniowych,
-    prawach rachunku kwantyfikatorów, zaprzeczaniu zdań z kwantyfikatorami
-    i o implikacji. Każde rozwiązanie zamyka jednoznacznie sformułowana odpowiedź.
+    *Zawartość dokumentu.* Dokument zawiera pełne rozwiązania zadań 3, 4, 5 i 6
+    z kolokwium 1 (grupa T2) wraz z *rozwiniętymi notatkami teoretycznymi* do
+    poruszanej tematyki:
+
+    #list(
+      [liczby zespolone — postać kanoniczna, trygonometryczna i wykładnicza,
+       moduł, argument główny, wzór de Moivre'a, pierwiastki $n$-tego stopnia
+       oraz opisywanie zbiorów na płaszczyźnie zespolonej;],
+      [wielomiany — dzielenie z resztą, zasadnicze twierdzenie algebry,
+       rozkład na czynniki nierozkładalne nad $RR$ i nad $CC$, twierdzenie
+       o rozkładzie na ułamki proste i kontrola liczby współczynników;],
+      [teoria mnogości — rodziny indeksowane, suma i przekrój uogólniony,
+       prawa de Morgana i rozdzielcze z dowodami, rodziny monotoniczne,
+       granice ciągów zbiorów, metoda liczenia sum i przekrojów rodzin
+       zadanych geometrycznie;],
+      [logika — funktory zdaniowe, kwantyfikatory i ich prawa, tabela prawdy
+       implikacji, prawda pusta, zaprzeczanie zdaniom z kwantyfikatorami
+       i zasięg kwantyfikatora.],
+    )
+
+    Dla porządku dołączono także rozwiązania zadań 1 i 2 tego samego arkusza,
+    tak aby dokument obejmował komplet sześciu zadań.
   ]
 ]
 
@@ -144,23 +159,75 @@
 #v(-0.2em)
 #align(right)[#text(size: 9pt, fill: rgb("#6b7c8d"))[razem: 16 punktów]]
 
+#v(0.8em)
+#block(width: 100%, fill: rgb("#fbf7f0"), stroke: (left: 2pt + accent2),
+  inset: (left: 10pt, right: 10pt, top: 7pt, bottom: 8pt))[
+  #set par(justify: true)
+  #text(size: 9.3pt)[
+    *Jak czytać ten dokument.* Zadania 3, 4 i 5 są opracowane najpełniej: każde
+    poprzedza notatka teoretyczna (oznaczona nagłówkiem *Notatka teoretyczna*),
+    a po rozwiązaniu następuje ramka *Odpowiedź* i *Uwaga* o typowych błędach.
+    W notatkach twierdzenia są numerowane i opatrzone dowodami lub szkicami
+    dowodów; definicje wyróżniono pionową kreską. Zadania 1, 2 i 6 stanowią
+    uzupełnienie kompletu arkusza.
+  ]
+]
+
 #pagebreak()
-#outline(title: [Spis treści], depth: 2)
+#outline(title: [Spis treści], depth: 3)
 #v(0.4em)
 
 // ============================================================
 //  ROZWIĄZANIA
 // ============================================================
-#czesc[Rozwiązania zadań 1--4]
-#include "zadania_1_4.typ"
+
+#czesc[Zadanie 3 wraz z notatką teoretyczną]
+#v(0.2em)
+#text(size: 9.6pt, style: "italic", fill: rgb("#54687c"))[
+  Tematyka: liczby zespolone — postać wykładnicza, pierwiastki $n$-tego stopnia,
+  interpretacja geometryczna rozwiązań.
+]
+#include "theory_zespolone.typ"
+#include "zadanie_3.typ"
+
+#pagebreak()
+#czesc[Zadanie 4 wraz z notatką teoretyczną]
+#v(0.2em)
+#text(size: 9.6pt, style: "italic", fill: rgb("#54687c"))[
+  Tematyka: wielomiany, rozkład na czynniki nierozkładalne nad $RR$ i nad $CC$,
+  rozkład funkcji wymiernej na ułamki proste.
+]
+#include "theory_algebra.typ"
+#include "zadanie_4.typ"
 
 #pagebreak()
 #czesc[Zadanie 5 wraz z notatką teoretyczną]
+#v(0.2em)
+#text(size: 9.6pt, style: "italic", fill: rgb("#54687c"))[
+  Tematyka: rodziny zbiorów, suma i przekrój uogólniony, granice ciągów zbiorów,
+  opisywanie zbiorów na płaszczyźnie.
+]
+#include "theory_zbiory.typ"
 #include "zadanie_5.typ"
 
 #pagebreak()
 #czesc[Zadanie 6 wraz z notatką teoretyczną]
+#v(0.2em)
+#text(size: 9.6pt, style: "italic", fill: rgb("#54687c"))[
+  Tematyka: funktory zdaniowe, kwantyfikatory, implikacja, prawda pusta,
+  zaprzeczanie zdaniom z kwantyfikatorami.
+]
+#include "theory_logika.typ"
 #include "zadanie_6.typ"
+
+#pagebreak()
+#czesc[Uzupełnienie: zadania 1 i 2]
+#v(0.2em)
+#text(size: 9.6pt, style: "italic", fill: rgb("#54687c"))[
+  Pozostałe zadania arkusza — liczby zespolone w postaci kanonicznej
+  i trygonometrycznej oraz zbiory opisane modułem i argumentem.
+]
+#include "zadania_1_2.typ"
 
 #v(1.2em)
 #czesc[Zestawienie odpowiedzi]

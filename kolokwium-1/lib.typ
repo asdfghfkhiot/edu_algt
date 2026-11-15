@@ -170,3 +170,115 @@
 
 // wyróżnienie nazwy pojęcia w tekście
 #let pojecie(body) = text(weight: "bold", fill: accent)[#body]
+
+// ============================================================
+//  Otoczenia notatki teoretycznej
+// ============================================================
+
+#let tw-counter = counter("twierdzenie")
+
+// nagłówek notatki teoretycznej
+#let notatka(tytul) = block(above: 1.35em, below: 0.45em, width: 100%)[
+  #text(size: 8.3pt, weight: "bold", tracking: 0.1em, fill: accent2)[NOTATKA TEORETYCZNA]
+  #v(-0.15em)
+  #text(size: 11.2pt, weight: "bold")[#tytul]
+  #v(-0.55em)
+  #line(length: 100%, stroke: 0.5pt + rgb("#d8c3b0"))
+]
+
+// podrozdział notatki (pojawia się w spisie treści)
+#let podtem(tytul) = heading(level: 3, numbering: none, outlined: true, bookmarked: true)[#tytul]
+
+// mniejszy podrozdział -- bez wpisu w spisie treści
+#let podpodtem(tytul) = block(above: 0.8em, below: 0.22em)[
+  #text(size: 9.7pt, weight: "bold", style: "italic", fill: rgb("#3d5266"))[#tytul]
+]
+
+// ramka definicji
+#let defn(nazwa: none, body) = {
+  let et = if nazwa == none { [Definicja.] } else { [Definicja (#nazwa).] }
+  block(
+    width: 100%, inset: (left: 9pt, right: 6pt, top: 3pt, bottom: 3pt),
+    stroke: (left: 1.6pt + rgb("#7b8fa3")), above: 0.75em, below: 0.85em,
+  )[
+    #text(size: 9.6pt)[
+      #text(weight: "bold", fill: rgb("#33506b"))[#et]#h(0.3em)#body
+    ]
+  ]
+}
+
+// ramka twierdzenia (numeracja ciągła w całym dokumencie)
+#let tw(nazwa: none, body) = {
+  tw-counter.step()
+  block(
+    width: 100%, fill: rgb("#fbf7f0"), stroke: (left: 2pt + accent2),
+    inset: (left: 10pt, right: 8pt, top: 6pt, bottom: 7pt),
+    above: 0.85em, below: 0.9em,
+  )[
+    #context {
+      let dop = if nazwa == none { "" } else { " (" + nazwa + ")" }
+      text(size: 8.1pt, weight: "bold", tracking: 0.08em, fill: accent2)[
+        TWIERDZENIE #tw-counter.display()#dop]
+    }
+    #v(0.35em)
+    #body
+  ]
+}
+
+// dowód
+#let dowod(body) = block(
+  width: 100%, inset: (left: 10pt, right: 2pt), above: 0.45em, below: 0.65em,
+)[
+  #set par(justify: true)
+  #text(size: 9.4pt)[#emph[Dowód.] #body #h(0.12em)#$square$]
+]
+
+// przykład
+#let przyklad(body) = block(
+  width: 100%, inset: (left: 10pt, right: 6pt, top: 3pt, bottom: 3pt),
+  stroke: (left: 1.6pt + rgb("#3f7d3f")), above: 0.75em, below: 0.85em,
+)[
+  #set par(justify: true)
+  #text(size: 9.5pt)[
+    #text(weight: "bold", fill: rgb("#2f6b3f"))[Przykład.]#h(0.3em)#body
+  ]
+]
+
+// wniosek / obserwacja
+#let wniosek(body) = block(
+  width: 100%, inset: (left: 10pt, right: 6pt, top: 2pt, bottom: 2pt),
+  stroke: (left: 1.6pt + rgb("#b07b12")), above: 0.6em, below: 0.7em,
+)[
+  #set par(justify: true)
+  #text(size: 9.5pt)[#strong[Wniosek.]#h(0.3em)#body]
+]
+
+// krok rozwiązania
+#let krok(nr, tytul, body) = block(above: 0.85em, below: 0.2em)[
+  #text(weight: "bold", fill: accent)[Krok #nr.#h(0.35em)#tytul]
+  #v(0.15em)
+  #body
+]
+
+// ramka komentarza (dyskusja, kontekst, "dlaczego")
+#let komentarz(body) = block(
+  width: 100%, fill: rgb("#f5f2f9"), stroke: (left: 2.2pt + rgb("#6b4f8a")),
+  inset: (left: 10pt, right: 9pt, top: 7pt, bottom: 8pt),
+  above: 0.9em, below: 1em,
+)[
+  #text(size: 8.2pt, weight: "bold", tracking: 0.09em, fill: rgb("#6b4f8a"))[KOMENTARZ]
+  #v(0.4em)
+  #set par(justify: true)
+  #text(size: 9.4pt)[#body]
+]
+
+// ramka "najważniejsze wzory"
+#let wzory(body) = block(
+  width: 100%, fill: rgb("#eef2f7"), stroke: 0.5pt + boxstroke,
+  inset: (x: 10pt, y: 8pt), above: 0.9em, below: 1em,
+)[
+  #text(size: 8.2pt, weight: "bold", tracking: 0.09em, fill: accent)[DO ZAPAMIĘTANIA]
+  #v(0.4em)
+  #set text(size: 9.4pt)
+  #body
+]
